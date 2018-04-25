@@ -1,0 +1,9 @@
+@import "./../../assets/scss/_color.scss";
+.header-bar {
+    padding: 1.5em 1em;
+    border-top: 0.3em solid $app-red;
+    border-bottom: 1px solid #dfe2e6;
+    .image {
+        width: 3.5em !important;
+    }
+}
