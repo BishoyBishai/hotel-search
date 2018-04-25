@@ -2,15 +2,13 @@ import { HotelSearchStore } from "./../types";
 import { searchHotelReducer } from "./reducer";
 import { CHANGE_START_DATE, CHANGE_END_DATE } from "../constants";
 import * as moment from "moment";
-import { DATE_FORMAT } from '../../../common/constants/date';
+import { DATE_FORMAT } from "../../../common/constants/date";
 describe("hotel search reducer", () => {
   let initialState: HotelSearchStore;
   beforeEach(() => {
     initialState = {
       from: null,
-      to: null,
-      loading: false,
-      error: false
+      to: null
     };
   });
   test("should return initial state", () => {

@@ -1,0 +1,23 @@
+.filters {
+    padding: 1em;
+    &+ {
+        padding: 25px 0;
+        border-bottom: 1px solid #dfe2e6;
+    }
+    &>div {
+        margin-bottom: 1.5em !important;
+    }
+    .header {
+        font-weight: 400 !important;
+        margin: 0 !important;
+        .input {
+            width: 6em;
+            input {
+                border: 0 !important;
+                padding: 0.5em !important;
+                margin: 0 !important;
+                font-weight: 600 !important;
+            }
+        }
+    }
+}

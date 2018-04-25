@@ -7,4 +7,16 @@ body {
 .app {
     margin: 0 !important;
     padding: 0 !important;
+    .filters-section {
+        padding: 2em !important;
+        .column {
+            &>.header {
+                margin: 0 !important;
+                padding: 0 1em !important;
+                font-weight: 600;
+                color: #7b7d7f;
+                font-size: 1.2em;
+            }
+        }
+    }
 }

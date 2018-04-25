@@ -1,19 +1,11 @@
 import { HotelSearchStore } from "../types";
-import {
-  CHANGE_START_DATE,
-  CHANGE_END_DATE,
-  SEARCH_LOADING_START,
-  SEARCH_LOADING_END,
-  SEARCH_FIRE_ERROR
-} from "../constants";
-import { DATE_FORMAT } from './../../../common/constants/date';
+import { CHANGE_START_DATE, CHANGE_END_DATE } from "../constants";
+import { DATE_FORMAT } from "./../../../common/constants/date";
 import { AnyAction } from "redux";
 import * as moment from "moment";
 const initialState: HotelSearchStore = {
   from: null,
-  to: null,
-  loading: false,
-  error: false
+  to: null
 };
 export function searchHotelReducer(
   state = initialState,
