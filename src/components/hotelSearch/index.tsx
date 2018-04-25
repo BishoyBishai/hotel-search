@@ -29,7 +29,9 @@ const HotelSearchSection = ({
             onChange={changeEndDateAction}
             value={to}
             placeholder="To"
-            min={moment()}
+            min={
+              (from && moment(from).add(1, "days")) || moment().add(1, "days")
+            }
             from={from}
             to={to}
           />
