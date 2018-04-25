@@ -1,0 +1,31 @@
+.react-datepicker-wrapper {
+    width: 100%;
+    .react-datepicker__input-container {
+        width: 100%;
+    }
+}
+
+.custom-date-picker {
+    background: #fff;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    color: rgba(0, 0, 0, 0.87);
+    border-radius: 0.333em;
+    padding: 0.555em 3.5em;
+    font-size: 1em;
+    position: relative;
+    .icon {
+        position: absolute;
+        line-height: 1;
+        text-align: center;
+        top: 0;
+        padding-top: 0.8em;
+        border-right: rgba(145, 145, 145, 0.2901960784313726) 1px solid;
+        margin: 0;
+        height: 100%;
+        width: 2.67142857em;
+        opacity: 0.5;
+        right: auto;
+        left: 1px;
+        border-radius: 0.28571429rem 0 0 0.28571429rem;
+    }
+}

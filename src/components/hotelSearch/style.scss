@@ -1,0 +1,18 @@
+@import "./../../assets/scss/_color.scss";
+.hotel-search {
+    background: $app-grey;
+    padding: 2em 4em;
+    .hotel-search-btn {
+        display: flex;
+        .button {
+            align-self: flex-end;
+            margin-bottom: .1em;
+            background: $app-red;
+        }
+    }
+    .field {
+        .header {
+            margin: .5em .1em !important;
+        }
+    }
+}
