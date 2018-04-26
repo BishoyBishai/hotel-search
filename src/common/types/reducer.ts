@@ -1,9 +1,11 @@
 import { HotelSearchStore } from "../../containers/hotelSearch/types";
-import { FiltersStore } from '../../containers/filters/types';
+import { FiltersStore } from "../../containers/filters/types";
+import { SortStore } from "../../containers/sortList/types";
 export interface Reducers {
   router;
   searchHotel: HotelSearchStore;
-  filters:FiltersStore
+  filters: FiltersStore;
+  sort: SortStore;
 }
 
 export interface LoadingProps {
