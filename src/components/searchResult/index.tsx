@@ -2,14 +2,12 @@ import * as React from "react";
 import { SearchResultProps } from "./types";
 import { Card, Header } from "semantic-ui-react";
 import Hotel from "./hotel";
-const SearchResult = ({ results }: SearchResultProps) => (
+const SearchResult = ({ results, totalNight }: SearchResultProps) => (
   <div>
-    {results.length > 0 && (
+    {totalNight && (
       <Header
         as="h3"
-        content={`${results.length}  ${
-          results.length > 1 ? "Hotels" : "Hotel"
-        }`}
+        content={`${totalNight}  ${totalNight > 1 ? "Nights" : "Night"}`}
       />
     )}
     <Card.Group as={Card.Group}>
