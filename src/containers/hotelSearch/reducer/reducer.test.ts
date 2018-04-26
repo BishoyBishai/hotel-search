@@ -61,10 +61,16 @@ describe("hotel search reducer", () => {
       searchHotelReducer(
         { ...initialState, loading: true },
         {
-          type: SEARCH_FAILED
+          type: SEARCH_FAILED,
+          payload: "error"
         }
       )
-    ).toMatchObject({ ...initialState, loading: false, error: true });
+    ).toMatchObject({
+      ...initialState,
+      loading: false,
+      error: true,
+      errorMsg: "error"
+    });
   });
   test("should store data", () => {
     const data = [

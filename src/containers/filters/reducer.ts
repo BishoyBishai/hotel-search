@@ -5,7 +5,7 @@ import {
   CHANGE_PRICE_FILTER_LIMITS,
   CHANGE_PRICE_FILTER_VALUES
 } from "./constants";
-const initialState: FiltersStore = {
+export const initialState: FiltersStore = {
   hotelName: null,
   maxPrice: 100,
   minPrice: 10,
