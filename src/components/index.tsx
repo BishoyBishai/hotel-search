@@ -12,7 +12,7 @@ class App extends React.Component {
       <div className="app">
         <HeaderBar />
         <HotelSearchSection />
-        <Grid>
+        <Grid stackable>
           <Grid.Row columns="equal" className="filters-section">
             <Grid.Column width={4}>
               <Header as="h3" content="Show results for" />
