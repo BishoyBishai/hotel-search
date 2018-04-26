@@ -8,6 +8,8 @@ import {
 } from "../constants";
 import { getAllHotels } from "../apis";
 import { HotelsListResponse } from "../types";
+import { changePriceFilterLimits } from "../../filters/actions";
+import { getMaxMinSearchResult } from "../helpers/filters";
 export function changeStartDateAction(from: moment.Moment) {
   return function(dispatch) {
     dispatch({ type: CHANGE_START_DATE, payload: from });
@@ -25,6 +27,7 @@ export function startSearchAction() {
     getAllHotels()
       .then((hotels: HotelsListResponse) => {
         dispatch({ type: STORE_SEARCH_RESULT, payload: hotels.hotels });
+        dispatch(changePriceFilterLimits(getMaxMinSearchResult(hotels.hotels)));
       })
       .catch(err => {
         dispatch({ type: SEARCH_FAILED, payload: err });

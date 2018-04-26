@@ -4,6 +4,8 @@ import "./style.scss";
 import HeaderBar from "./header/index";
 import HotelSearchSection from "./../containers/hotelSearch";
 import FiltersSection from "./../containers/filters";
+import SearchResultSection from "./../containers/searchResult";
+
 import { Grid, Header } from "semantic-ui-react";
 
 class App extends React.Component {
@@ -18,7 +20,9 @@ class App extends React.Component {
               <Header as="h3" content="Show results for" />
               <FiltersSection />
             </Grid.Column>
-            <Grid.Column />
+            <Grid.Column>
+              <SearchResultSection />
+            </Grid.Column>
           </Grid.Row>
         </Grid>
       </div>

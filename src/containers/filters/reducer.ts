@@ -25,7 +25,8 @@ export function filtersReducer(
     case CHANGE_PRICE_FILTER_LIMITS: {
       return {
         ...state,
-        ...(action.payload as PriceFilterRange)
+        ...(action.payload as PriceFilterRange),
+        customMax: action.payload.maxPrice
       };
     }
     case CHANGE_PRICE_FILTER_VALUES: {
