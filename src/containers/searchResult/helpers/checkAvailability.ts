@@ -2,7 +2,7 @@ import { AvailabilityEntity } from "../../hotelSearch/types";
 import * as moment from "moment";
 import { DATE_FORMAT } from "../../../common/constants/date";
 export function convertStringToMoment(str) {
-  return moment(moment(str, DATE_FORMAT).toDate());
+  return moment(moment(str, "DD-MM-YYYY").toDate());
 }
 export function checkAvailability(
   availability: AvailabilityEntity[],
