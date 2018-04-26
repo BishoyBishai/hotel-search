@@ -7,8 +7,12 @@ import "./style.scss";
 const HotelSearchSection = ({
   from,
   to,
+  loading,
+  error,
+  errorMsg,
   changeStartDateAction,
-  changeEndDateAction
+  changeEndDateAction,
+  startSearchAction
 }: HotelSearchSectionProps) => (
   <div className="hotel-search">
     <Form>
@@ -41,6 +45,9 @@ const HotelSearchSection = ({
           width="4"
           className="hotel-search-btn"
           icon
+          onClick={startSearchAction}
+          error={error}
+          loading={loading}
           labelPosition="left"
           color="red"
           disabled={!from}

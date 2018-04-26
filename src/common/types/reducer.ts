@@ -8,6 +8,6 @@ export interface Reducers {
 
 export interface LoadingProps {
   loading: boolean;
-  error: boolean;
-  errorMsg: string;
+  error?: boolean;
+  errorMsg?: string;
 }

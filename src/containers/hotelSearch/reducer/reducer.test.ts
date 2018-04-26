@@ -1,6 +1,11 @@
+import { SEARCH_FAILED, STORE_SEARCH_RESULT } from "./../constants";
 import { HotelSearchStore } from "./../types";
 import { searchHotelReducer } from "./reducer";
-import { CHANGE_START_DATE, CHANGE_END_DATE } from "../constants";
+import {
+  CHANGE_START_DATE,
+  CHANGE_END_DATE,
+  SEARCH_START_LOADING
+} from "../constants";
 import * as moment from "moment";
 import { DATE_FORMAT } from "../../../common/constants/date";
 describe("hotel search reducer", () => {
@@ -8,7 +13,11 @@ describe("hotel search reducer", () => {
   beforeEach(() => {
     initialState = {
       from: null,
-      to: null
+      to: null,
+      searchResult: [],
+      loading: false,
+      error: false,
+      errorMsg: null
     };
   });
   test("should return initial state", () => {
@@ -39,5 +48,45 @@ describe("hotel search reducer", () => {
         .add(1, "days")
         .format(DATE_FORMAT)
     );
+  });
+  test("should make loading true", () => {
+    expect(
+      searchHotelReducer(initialState, {
+        type: SEARCH_START_LOADING
+      })
+    ).toMatchObject({ ...initialState, loading: true, error: false });
+  });
+  test("should make error true", () => {
+    expect(
+      searchHotelReducer(
+        { ...initialState, loading: true },
+        {
+          type: SEARCH_FAILED
+        }
+      )
+    ).toMatchObject({ ...initialState, loading: false, error: true });
+  });
+  test("should store data", () => {
+    const data = [
+      {
+        name: "Media One Hotel",
+        price: 102.2,
+        city: "dubai",
+        availability: [
+          { from: "10-10-2020", to: "15-10-2020" },
+          { from: "25-10-2020", to: "15-11-2020" },
+          { from: "10-12-2020", to: "15-12-2020" }
+        ]
+      }
+    ];
+    expect(
+      searchHotelReducer(
+        { ...initialState, loading: true },
+        {
+          type: STORE_SEARCH_RESULT,
+          payload: data
+        }
+      ).searchResult
+    ).toMatchObject(data);
   });
 });
