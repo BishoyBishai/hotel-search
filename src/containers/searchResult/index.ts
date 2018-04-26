@@ -10,7 +10,7 @@ const mapStateToProps = (s: Reducers) => {
     filters: { hotelName, customMax },
     sort: { byName, byPrice }
   } = s;
-  let results = searchResult.filter(hotel => {
+  let filteredResults = searchResult.filter(hotel => {
     return (
       checkAvailability(hotel.availability, from, to) &&
       hotel.price < customMax &&
@@ -19,15 +19,16 @@ const mapStateToProps = (s: Reducers) => {
         : hotel.name.toLowerCase().indexOf(hotelName.toLowerCase()) !== -1)
     );
   });
-  results = byName
-    ? results.sort((r1, r2) => (r1.name < r2.name ? -1 : 1))
-    : results;
-  results = byPrice
-    ? results.sort((r1, r2) => (r1.price < r2.price ? -1 : 1))
-    : results;
+  filteredResults = byName
+    ? filteredResults.sort((r1, r2) => (r1.name < r2.name ? -1 : 1))
+    : filteredResults;
+  filteredResults = byPrice
+    ? filteredResults.sort((r1, r2) => (r1.price < r2.price ? -1 : 1))
+    : filteredResults;
   return {
     totalNight: moment(to).diff(from, "days"),
-    results
+    filteredResults,
+    results: searchResult
   };
 };
 const mapDispatchToProps = dispatch => ({});
