@@ -18,6 +18,8 @@ const DatePickerField = ({
   <div>
     <Header content="To" as="h5" />
     <DatePicker
+      showYearDropdown
+      showMonthDropdown
       customInput={<CustomDatePicker value={value} placeholder="To" />}
       selected={value}
       selectsStart
